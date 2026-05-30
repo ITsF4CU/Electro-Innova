@@ -176,3 +176,7 @@ document.addEventListener('click', () => {
         menu.classList.remove('active');
     }
 })
+
+// BUSQUEDA
+
+const buscador = document.querySelector('.buscador')

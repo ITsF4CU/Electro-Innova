@@ -20,12 +20,22 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .login-window {
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-2 {
+    display: none
+}
+
+.login-2.active {
     display: flex;
     flex-direction: column;
 }
