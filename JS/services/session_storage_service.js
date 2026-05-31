@@ -32,10 +32,10 @@ class SessionStorageService {
 
     // Funcion para iniciar sesion
     login(email, password) {
-        let users = this.#userStorageService.getUsers();
+        const users = this.#userStorageService.getUsers();
 
         // Se busca el indice del usuario en la lista de usuarios
-        let userIndex = users.findIndex(u => u.password === password && u.email === email);
+        const userIndex = users.findIndex(u => u.password === password && u.email === email);
 
         // Si el usuario existe, se establece el usuario actual
         if (userIndex >= 0) {
