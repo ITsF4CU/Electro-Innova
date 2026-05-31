@@ -14,7 +14,7 @@ class LoginFormManager {
             const loginStatus = sessionStorageService.login(email, password);
 
             if (loginStatus.success) {
-                window.location.href = "main.html";
+                window.location.href = "index.html";
             } else {
                 // TODO: Crear una alerta o mensaje para mostrar error
                 alert(loginStatus.message);
