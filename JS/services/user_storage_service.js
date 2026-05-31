@@ -75,7 +75,7 @@ class UserStorageService {
         // Recibe un objeto con el id, email, nombre, apellido y contraseña.
 
         // Se obtienen los datos del storage
-        let data = this.#getUserData();
+        const data = this.#getUserData();
 
         // Se busca el indice del usuario que coincide con el id del usuario recibido por parametros
         const userIndex = data.list.findIndex(u => u.id === user.id);

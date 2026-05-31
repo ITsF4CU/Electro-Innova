@@ -35,19 +35,25 @@ class SessionStorageService {
         const users = this.#userStorageService.getUsers();
 
         // Se busca el indice del usuario en la lista de usuarios
-        const userIndex = users.findIndex(u => u.password === password && u.email === email);
+        const userIndex = users.findIndex(u => u.email === email);
 
         // Si el usuario existe, se establece el usuario actual
         if (userIndex >= 0) {
-            const userId = users[userIndex].id;
-            this.#setCurrentUser(userId);
 
-            // Retorna true si el login fue exitoso
-            return true;
+            // Se verifica que la contraseña sea correcta
+            if (users[userIndex].password === password) {
+
+                const userId = users[userIndex].id;
+                this.#setCurrentUser(userId);
+
+                // Retorna un objeto indicando que el login fue exitoso
+                return { success: true, message: "Login exitoso." };
+            }
+            // Retorna un objeto indicando que la contraseña es incorrecta
+            return { success: false, message: "Contraseña incorrecta." };
         }
-
-        // Retorna false si el login no fue exitoso
-        return false;
+        // Retorna un objeto indicando que el correo no existe
+        return { success: false, message: "El correo no existe." };
     }
 
     // Funcion para cerrar sesion

@@ -11,13 +11,13 @@ class LoginFormManager {
             const email = formData.get("email");
             const password = formData.get("password");
 
-            const loginSuccess = sessionStorageService.login(email, password);
+            const loginStatus = sessionStorageService.login(email, password);
 
-            if (loginSuccess) {
+            if (loginStatus.success) {
                 window.location.href = "main.html";
             } else {
                 // TODO: Crear una alerta o mensaje para mostrar error
-                alert("Usuario o contraseña incorrectos.");
+                alert(loginStatus.message);
             }
         })
     }
