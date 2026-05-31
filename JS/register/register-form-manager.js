@@ -52,7 +52,7 @@ class RegisterFormManager {
         sessionStorageService.login(email, password);
 
         // Redireccion a la pagina de inicio
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     }
 }
 
