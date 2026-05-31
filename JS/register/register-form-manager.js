@@ -1,4 +1,5 @@
 import { userStorageService } from "../services/user_storage_service.js";
+import { sessionStorageService } from "../services/session_storage_service.js";
 
 class RegisterFormManager {
     init() {
@@ -46,6 +47,9 @@ class RegisterFormManager {
 
         // Se agrega el usuario en el storage
         userStorageService.addUser(user);
+
+        // Se inicia sesion en el usuario registrado
+        sessionStorageService.login(email, password);
 
         // Redireccion a la pagina de inicio
         window.location.href = "main.html";
