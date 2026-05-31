@@ -1,3 +1,5 @@
+import { indexSessionManager } from "./index/index-session-manager.js";
+
 // 1. Seleccionamos los elementos clave del DOM
 const track = document.querySelector('.slider-track');
 const slides = document.querySelectorAll('.slide');
@@ -13,18 +15,18 @@ function moveSlider(index) {
     // Si el índice se pasa del último banner, vuelve al primero (0)
     if (index >= slides.length) {
         currentIndex = 0;
-    } 
+    }
     // Si se va por debajo de cero (al tocar "atrás" en el primero), va al último
     else if (index < 0) {
         currentIndex = slides.length - 1;
-    } 
+    }
     else {
         currentIndex = index;
     }
 
     // Calculamos el desplazamiento: cada banner se mueve un 100% hacia la izquierda
     const percentage = currentIndex * -100;
-    track.style.transform = `translateX(${percentage / slides.length}%)`; 
+    track.style.transform = `translateX(${percentage / slides.length}%)`;
     // Nota: Como el track mide 300%, debemos moverlo -100% para que se desplaze entero. 
     // Dividiendo por slides.length nos aseguramos que el salto sea exacto por pantalla.
     // Una forma más simple si el track midiera igual que el contenedor padre es:
@@ -104,9 +106,9 @@ class Productos {
                     <button data-id="${this.id}">Añadir al carrito</button>
                 </div>
                 <button class="fav-button"><i class="ph-duotone ph-heart"></i></button>`
-                ;
+            ;
 
-            return card
+        return card
     };
 }
 
@@ -148,20 +150,20 @@ const createProducts = [
 ];
 
 // CORRECCIÓN: Apuntamos directo a la pista del slider de productos con un nombre único
-const productosTrack = document.querySelector('.product-slider-track'); 
+const productosTrack = document.querySelector('.product-slider-track');
 
 createProducts.forEach(prod => {
     const newCard = new Productos(prod.id, prod.nombre, prod.precio, prod.cuotas, prod.envio, prod.imagen);
 
     const htmlCard = newCard.renderizarCARDS();
-    
+
     // CORRECCIÓN: Le metemos la tarjeta al contenedor correcto
     productosTrack.appendChild(htmlCard);
 });
 
 
 // CATEGORIAS 
-const ctgMenu = document.querySelector('.categories'); 
+const ctgMenu = document.querySelector('.categories');
 const menu = document.querySelector('.categories-menu');
 
 ctgMenu.addEventListener('click', (e) => {
@@ -180,3 +182,6 @@ document.addEventListener('click', () => {
 // BUSQUEDA
 
 const buscador = document.querySelector('.buscador')
+
+// Carga la sesión del usuario al iniciar la página
+indexSessionManager.init();
