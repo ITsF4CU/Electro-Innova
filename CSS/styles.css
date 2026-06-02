@@ -1,3 +1,15 @@
+/* COLORES A UTILIZAR */
+:root {
+    --azul-electrico: #0000ff;
+    --blanco: white;
+    --logo-color: rgb(116, 112, 112);
+    --sombreado: rgb(192, 179, 179);
+    --color-de-texto: black;
+    --hover-color: #0011aa
+}
+
+
+
 body {
     padding: 0;
     margin: 0;
@@ -29,7 +41,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 2%;
-    background-color: #0000FF;
+    background-color: #0000ff;
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(0.2rem, 2vmin, 0.9rem);
     color: white;
@@ -89,6 +101,13 @@ i {
     color: rgb(116, 112, 112)
 }
 
+.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
 .logo img {
     width: 60px;
     height: auto;
@@ -122,48 +141,59 @@ form input[type="text"] {
     background: url(/Images/caret-down.svg) no-repeat right 4% center;
 }
 
-.first-line-options {
-    width: 15%;
-    justify-content: center;
-}
 
-.first-line-options ul {
+.first-line-options .options {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10%;
+}
+
+.first-line-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
     font-family: 'Montserrat';
     font-weight: bold;
     flex-wrap: wrap;
-    width: 100%
+    width: 13%
 }
 
-.first-line-options ul li {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.first-line-options ul li a{
-    text-decoration: none;
-    color: black;
-    display: flex ;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    text-align: center;
-    font-size: clamp(0.8rem, 2vmin, 1rem);
-    transition: text-decoration;
-}
-
-.first-line-options ul li a:hover {
-    text-decoration: underline;
-}
-
-
-.first-line-options i {
+.first-line-options .options i {
     color: black;
     font-weight: bold;
+}
+
+
+.first-line-options .options a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.notification {
+    position: absolute;
+    top: -5px; 
+    left: 15px; 
+    background-color: #0000ff; 
+    color: white;
+    font-size: 0.65rem;
+    font-weight: bold;
+    min-width: 16px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.notification.active {
+    display: flex;
 }
 
 #first-line-icons {
@@ -171,13 +201,66 @@ form input[type="text"] {
     font-weight: bold;
 }
 
+/* ----------- BUSCADOR ------------ */
 .search {
     padding: 1% 2%;
     border: none;
     outline: none;
     background-color: #0000ff;
-    cursor: pointer
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
+.seeker-container {
+    width: 100%;
+    position: relative;
+}
+
+.seeker-input {
+    display: flex;
+}
+
+.suggestions-list {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    right: 0;
+    top: 100%;
+    z-index: 11;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.555);
+    display: none;
+}
+
+.suggestions-list.active {
+    display: block;
+}
+
+#product-list-in-search {
+    width: 100%;
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
+}
+
+.suggestions-list ul li {
+    list-style-type: none;
+}
+
+.suggestions-list ul li a{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s, color 0.3s
+}
+
+.suggestions-list ul li a:hover {
+    background-color: #0000ff;
+    color: white
+}
+/* ---------------------------- */
 
 .second-line-options {
     width: 100%;
@@ -221,11 +304,10 @@ form input[type="text"] {
     left: 0;
     width: 200px;
     background-color: white;
-    border: 4px solid blue;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.829);
     border-radius: 8px;
     margin-top: 5px;
-    z-index: 3000;
+    z-index: 10;
     display: none;
 }
 
@@ -266,19 +348,20 @@ form input[type="text"] {
     cursor: pointer;
     color: white;
     gap: 10px;
-    padding: 4%;
+    padding: 6%;
     background-color: #0000ff;
-    transition: background-color;
+    transition: background-color 0.3s;
     font-size: clamp(0.7rem, 2vmin, 1rem)
+}
+
+.categories:hover {
+    background-color: #0000c7
 }
 
 .categories i {
     font-size: clamp(0.8rem, 2vmin, 1.6rem)
 }
 
-.categories:hover {
-    background-color: #0000c7
-}
 
 /* SECCIÓN DE BANNERS */
 
@@ -489,7 +572,7 @@ form input[type="text"] {
 }
 
 .tag {
-    color: blue;
+    color: #0000ff;
     font-size: 45px
 }
 
@@ -661,13 +744,27 @@ form input[type="text"] {
         height: 50vh;
     }
 
-    .first-line-options ul li a p {
-        display: none;
+    .first-line-options {
+        width: auto;
+        gap: 1px;
+        padding-right: 10px
     }
 
-    .first-line-options ul{
-        gap: 12px;
-        font-weight: bold;
+    .first-line-options .options a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;        /* Espacio cuadrado ideal para que entre el ícono suelto */
+        height: 35px;
+    }
+
+    .notification {
+        top: -2px;          /* Lo subimos un cachito */
+        left: 20px;         /* Lo tiramos a la derecha del ícono */
+    }
+
+    .first-line-options .inner-a {
+        display: none;
     }
 
     .banner {

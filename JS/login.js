@@ -1,6 +1,3 @@
-import { registerFormManager } from "./register/register-form-manager.js";
-import { loginFormManager } from "./login/login-form-manager.js";
-
 const create = document.querySelector('#ir-a-registro');
 const loginButton = document.querySelector('#ir-a-inicio-sesion')
 const login = document.querySelector('.login-window')
@@ -19,9 +16,3 @@ loginButton.addEventListener('click', (e) => {
     registerSection.classList.remove('active');
     login.style.display = 'flex'
 })
-
-// Inicializa el manager de registro
-registerFormManager.init();
-
-// Inicializa el manager de inicio de sesion
-loginFormManager.init();

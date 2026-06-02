@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio | Electro Innova</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
     <header>
         <div class="blue-nav">
@@ -35,7 +31,7 @@
 
                     <li>
                         <i class="ph ph-user-circle"></i>
-                        <a href="javascript:void(0)" id="user-btn"></a>
+                        <a href="login.html">Mi cuenta</a>
                     </li>
 
                     <li>
@@ -48,24 +44,42 @@
 
         <div class="first-header-line">
             <div class="logo">
-                <img src="Images/Identity/WhatsApp Image 2026-05-16 at 13.23.30.jpeg" alt="electro-innova-logo">
-                <h2>Electro Innova</h2>
+                <a href="">
+                    <img src="Images/Identity/ChatGPT Image 1 jun 2026, 01_32_26 p.m..png" alt="electro-innova-logo">
+                    <h2>Electro Innova</h2>
+                </a>
             </div>
 
             <form class="buscador">
-                <input type="text" placeholder="¿Que estas buscando?..." class="seeker">
-                <button class="search"><i class="ph ph-magnifying-glass"></i></button>
+                <div class="seeker-container">
+                    <div class="seeker-input">
+                        <input type="text" placeholder="¿Que estas buscando?..." class="seeker" id="seeker-input">
+                        <button class="search"><i class="ph ph-magnifying-glass" id="seeker-button"></i></button>
+                    </div>
+
+                    <div class="suggestions-list" id="suggestions-list">
+                        <ul id="product-list-in-search">
+                        </ul>
+                    </div>
+                </div>
             </form>
 
             <div class="first-line-options">
-                <ul>
-                    <li><a href=""><i class="ph ph-heart"></i>
-                            <p>Favoritos</p>
-                        </a></li>
-                    <li><a href=""><i class="ph ph-shopping-cart-simple"></i>
-                            <p>Carrito</p>
-                        </a></li>
-                </ul>
+                <div class="options">
+                    <a href="">
+                        <i class="ph ph-heart"></i>
+                        <span class="inner-a">Favoritos</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            
+                <div class="options">
+                    <a href="cart.html">
+                        <i class="ph ph-shopping-cart-simple"></i>
+                        <span class="inner-a">Carrito</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -79,22 +93,22 @@
 
                     <div class="categories-menu">
                         <ul>
-                            <li><a href="">Heladeras</a></li>
-                            <li><a href="">Lavarropas</a></li>
-                            <li><a href="">Cocinas</a></li>
-                            <li><a href="">Climatizacion</a></li>
-                            <li><a href="">Informatica</a></li>
+                            <li><a href="products.html">Heladeras</a></li>
+                            <li><a href="products.html">Lavarropas</a></li>
+                            <li><a href="products.html">Cocinas</a></li>
+                            <li><a href="products.html">Climatizacion</a></li>
+                            <li><a href="products.html">Informatica</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <li><a href="">Ofertas</a></li>
-                <li><a href="">Electrodomésticos</a></li>
-                <li><a href="">Tecnología</a></li>
-                <li><a href="">Hogar</a></li>
-                <li><a href="">Climatización</a></li>
-                <li><a href="">TV y Audio</a></li>
-                <li><a href="">Mas vendidos</a></li>
+                <li><a href="products.html">Ofertas</a></li>
+                <li><a href="products.html">Electrodomésticos</a></li>
+                <li><a href="products.html">Tecnología</a></li>
+                <li><a href="products.html">Hogar</a></li>
+                <li><a href="products.html">Climatización</a></li>
+                <li><a href="products.html">TV y Audio</a></li>
+                <li><a href="products.html">Mas vendidos</a></li>
             </ul>
         </div>
     </header>
@@ -111,8 +125,7 @@
                                 <button>Ver Mas</button>
                             </div>
                             <div class="product">
-                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
-                                    alt="">
+                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -124,8 +137,7 @@
                                 <button>Ver Mas</button>
                             </div>
                             <div class="product">
-                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
-                                    alt="">
+                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -136,7 +148,7 @@
             </div>
         </section>
 
-
+        
         <div class="desc-container">
             <div class="page-descriptions">
                 <div class="desc">
@@ -244,7 +256,9 @@
         </section>
     </main>
 
+    <script type="module" src="JS/interaction/global-header.js"></script>
     <script type="module" src="JS/main.js"></script>
+    <script src="JS/utils/cart-buttons.js"></script>
+    <script src="JS/interaction/add-to-cart.js" type="module"></script>
 </body>
-
 </html>

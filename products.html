@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/products_page.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <header>
+        <div class="first-header-line">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Images/Identity/ChatGPT Image 1 jun 2026, 01_32_26 p.m..png" alt="electro-innova-logo">
+                    <h2>Electro Innova</h2>
+                </a>
+            </div>
+
+            <form class="buscador">
+                <div class="seeker-container">
+                    <div class="seeker-input">
+                        <input type="text" placeholder="¿Que estas buscando?..." class="seeker" id="seeker-input">
+                        <button class="search"><i class="ph ph-magnifying-glass" id="seeker-button"></i></button>
+                    </div>
+
+                    <div class="suggestions-list" id="suggestions-list">
+                        <ul id="product-list-in-search">
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <div class="first-line-options">
+                <div class="options">
+                    <a href="">
+                        <i class="ph ph-heart"></i>
+                        <span class="inner-a">Favoritos</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            
+                <div class="options">
+                    <a href="cart.html">
+                        <i class="ph ph-shopping-cart-simple"></i>
+                        <span class="inner-a">Carrito</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="second-line-options">
+            <ul>
+                <div class="dropdown-container">
+                    <button class="categories">
+                        <i class="ph ph-list"></i>
+                        Categorías
+                    </button>
+
+                    <div class="categories-menu">
+                        <ul>
+                            <li><a href="">Heladeras</a></li>
+                            <li><a href="">Lavarropas</a></li>
+                            <li><a href="">Cocinas</a></li>
+                            <li><a href="">Climatizacion</a></li>
+                            <li><a href="">Informatica</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <li><a href="">Ofertas</a></li>
+                <li><a href="">Electrodomésticos</a></li>
+                <li><a href="">Tecnología</a></li>
+                <li><a href="">Hogar</a></li>
+                <li><a href="">Climatización</a></li>
+                <li><a href="">TV y Audio</a></li>
+                <li><a href="">Mas vendidos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="products-filter">
+            <div class="section_title">
+                <h2 id="section-title">Nuestros productos</h2>
+            
+                <div class="section-buttons">
+                    <div class="filter-wrapper">
+                        <div class="filter" id="filter-button">
+                            <button><i class="ph ph-funnel-simple"></i>Filtrar</button>
+                        </div>
+
+                        <div class="dropdown-menu hidden" id="filter-dropdown">
+                            <div class="dropdown-group">
+                                <h4>Categorías</h4>
+                                <button class="btn-select" data-tipo="categoria" data-value="heladeras">Heladeras</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="lavarropas">Lavarropas</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="cocinas">Cocinas</button>
+                            </div>
+                            <div class="dropdown-group">
+                                <h4>Beneficios</h4>
+                                <button class="btn-select" data-tipo="beneficio" data-value="envio">Envío Gratis</button>
+                                <button class="btn-select" data-tipo="beneficio" data-value="cuotas">Cuotas sin Interés</button>
+                            </div>
+                            <button class="btn-clear" id="clear-filters">Limpiar Filtros</button>
+                        </div>
+                    </div>
+                
+                    <div class="order-wrapper">
+                        <div class="order-by" id="order-button">
+                            <button><i class="ph ph-list-bullets"></i>Ordenar por</button>
+                        </div>
+                    
+                        <div class="dropdown-menu hidden" id="order-dropdown">
+                            <button class="btn-order" data-order="precio-asc">Precio (Menor a Mayor)</button>
+                            <button class="btn-order" data-order="precio-desc">Precio (Mayor a Menor)</button>
+                            <button class="btn-order" data-order="alfa-asc">Nombre (A - Z)</button>
+                            <button class="btn-order" data-order="alfa-desc">Nombre (Z - A)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="product-wrapper" id="product-wrapper"></div>
+        </section>
+    </main>
+
+    <script type="module" src="JS/interaction/global-header.js"></script>
+    <script type = "module" src="JS/products.js"></script>
+    <script></script>
+    <script src="JS/interaction/add-to-cart.js" type="module"></script>
+    <script src="JS/product-filter/filter.js"></script>
+</body>
+</html>
