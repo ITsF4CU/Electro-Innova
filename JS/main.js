@@ -116,8 +116,4 @@ if (productosTrack) { // Buena práctica: verificar que exista en el HTML actual
     });
 }
 
-
-// BOTON PARA AGREGAR AL CARRITO
-// JS/utils/cart-buttons.js
-
-// Creamos una función y le metemos el EXPORT para que la use cualquiera
+indexSessionManager.init();
