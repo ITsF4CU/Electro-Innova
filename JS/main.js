@@ -1,4 +1,4 @@
-import { indexSessionManager } from "./index/index-session-manager.js";
+import { indexSessionManager } from "../index/index-session-manager.js";
 
 // 1. Seleccionamos los elementos clave del DOM
 const track = document.querySelector('.slider-track');
