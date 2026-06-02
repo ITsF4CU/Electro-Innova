@@ -1,5 +1,3 @@
-import { indexSessionManager } from "./index/index-session-manager.js";
-
 // 1. Seleccionamos los elementos clave del DOM
 const track = document.querySelector('.slider-track');
 const slides = document.querySelectorAll('.slide');
@@ -15,18 +13,18 @@ function moveSlider(index) {
     // Si el índice se pasa del último banner, vuelve al primero (0)
     if (index >= slides.length) {
         currentIndex = 0;
-    }
+    } 
     // Si se va por debajo de cero (al tocar "atrás" en el primero), va al último
     else if (index < 0) {
         currentIndex = slides.length - 1;
-    }
+    } 
     else {
         currentIndex = index;
     }
 
     // Calculamos el desplazamiento: cada banner se mueve un 100% hacia la izquierda
     const percentage = currentIndex * -100;
-    track.style.transform = `translateX(${percentage / slides.length}%)`;
+    track.style.transform = `translateX(${percentage / slides.length}%)`; 
     // Nota: Como el track mide 300%, debemos moverlo -100% para que se desplaze entero. 
     // Dividiendo por slides.length nos aseguramos que el salto sea exacto por pantalla.
     // Una forma más simple si el track midiera igual que el contenedor padre es:
@@ -78,110 +76,46 @@ prodPrevBtn.addEventListener('click', () => {
 
 // PRODUCTOS
 
-class Productos {
-    constructor(id, nombre, precio, cuotas, envio, imagen) {
-        this.id = id;
-        this.nombre = nombre;
-        this.envio = envio;
-        this.cuotas = cuotas;
-        this.precio = precio;
-        this.imagen = imagen;
-    }
+import { createProducts } from "./products-database/products-db.js";
 
-    renderizarCARDS() {
-        const card = document.createElement('div');
-        card.classList.add('product-card');
+function renderizarCARDS(producto) {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+    card.innerHTML = `
+        <div class="product-image">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+        </div>
+        <div class="product-info">
+            <p class="pName">${producto.nombre}</p>
+            <p class="pPrice">$${producto.precio}</p>
+            <p class="pCuotas">${producto.cuotas}</p>
+            <p class="pSend">${producto.envio}</p>
+        </div>
+        <div class="add-to-cart">
+            <button data-id="${producto.id}">Añadir al carrito</button>
+        </div>
+        <button class="fav-button"><i class="ph-duotone ph-heart"></i></button>`
+        ;
+    return card
+};
 
-        card.innerHTML = `
-                <div class="product-image">
-                    <img src="Images/Products/pngwing.com.png" alt="${this.nombre}">
-                </div>
-                <div class="product-info">
-                    <p class="pName">${this.nombre}</p>
-                    <p class="pPrice">$${this.precio}</p>
-                    <p class="pCuotas">${this.cuotas}</p>
-                    <p class="pSend">${this.envio}</p>
-                </div>
-                <div class="add-to-cart">
-                    <button data-id="${this.id}">Añadir al carrito</button>
-                </div>
-                <button class="fav-button"><i class="ph-duotone ph-heart"></i></button>`
-            ;
-
-        return card
-    };
-}
-
-// CREAMOS LA BASE DE DATOS
-
-const createProducts = [
-    {
-        id: 1,
-        nombre: "Heladera Patrick Plateada",
-        precio: "549.999",
-        cuotas: "12 cuotas sin interes",
-        envio: "Envio gratis",
-        imagen: "Images/Products/pngwing.com.png"
-    },
-    {
-        id: 2,
-        nombre: "Lavarropas Automatico Drean",
-        precio: "420.000",
-        cuotas: "6 cuotas sin interes",
-        envio: "Envio gratis",
-        imagen: "Images/Products/pngwing.com.png"
-    },
-    {
-        id: 3,
-        nombre: "Cocina Florencia 4 Hornallas",
-        precio: "310.500",
-        cuotas: "Mismo precio en 1 pago",
-        envio: "Retiro gratis en sucursal",
-        imagen: "Images/Products/pngwing.com.png"
-    },
-    {
-        id: 4,
-        nombre: "Que onda muchachos",
-        precio: "1.000.000",
-        cuotas: "6 cuotas sin interes",
-        envio: "Envio gratis",
-        imagen: "Images/Products/pngwing.com.png"
-    }
-];
 
 // CORRECCIÓN: Apuntamos directo a la pista del slider de productos con un nombre único
-const productosTrack = document.querySelector('.product-slider-track');
+const productosTrack = document.querySelector('.product-slider-track'); 
+if (productosTrack) { // Buena práctica: verificar que exista en el HTML actual
+    createProducts.forEach(prod => {
+        if (prod.destacado == true) {
+        // Le pasamos el objeto 'prod' directamente a la función de renderizado
+        const htmlCard = renderizarCARDS(prod);
+        
+        // Lo metemos en el contenedor
+        productosTrack.appendChild(htmlCard);
+        }
+    });
+}
 
-createProducts.forEach(prod => {
-    const newCard = new Productos(prod.id, prod.nombre, prod.precio, prod.cuotas, prod.envio, prod.imagen);
 
-    const htmlCard = newCard.renderizarCARDS();
+// BOTON PARA AGREGAR AL CARRITO
+// JS/utils/cart-buttons.js
 
-    // CORRECCIÓN: Le metemos la tarjeta al contenedor correcto
-    productosTrack.appendChild(htmlCard);
-});
-
-
-// CATEGORIAS 
-const ctgMenu = document.querySelector('.categories');
-const menu = document.querySelector('.categories-menu');
-
-ctgMenu.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    menu.classList.toggle('active')
-})
-
-document.addEventListener('click', () => {
-    if (menu.classList.contains('active')) {
-        menu.classList.remove('active');
-    }
-})
-
-// BUSQUEDA
-
-const buscador = document.querySelector('.buscador')
-
-// Carga la sesión del usuario al iniciar la página
-indexSessionManager.init();
+// Creamos una función y le metemos el EXPORT para que la use cualquiera
