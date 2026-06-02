@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | Electro Innova</title>
+    <link rel="stylesheet" href="CSS/account-page/dashboard.css">
+    <link rel="stylesheet" href="CSS/account-page/summary.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <header>
+        <div class="blue-nav">
+            <div class="dis">
+                <i class="ph ph-truck"></i>
+                <p>Envios gratis en compras mayores a $99.999</p>
+            </div>
+
+            <div class="blue-nav-options">
+                <ul>
+                    <li>
+                        <i class="ph ph-map-pin"></i>
+                        <a href="">Sucursales</a>
+                    </li>
+
+                    <li>
+                        <i class="ph ph-user-circle"></i>
+                        <a href="login.html">Mi cuenta</a>
+                    </li>
+
+                    <li>
+                        <i class="ph ph-info"></i>
+                        <a href="">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="first-header-line">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Images/Identity/ChatGPT Image 1 jun 2026, 01_32_26 p.m..png" alt="electro-innova-logo">
+                    <h2>Electro Innova</h2>
+                </a>
+            </div>
+
+            <form class="buscador">
+                <div class="seeker-container">
+                    <div class="seeker-input">
+                        <input type="text" placeholder="¿Que estas buscando?..." class="seeker" id="seeker-input">
+                        <button class="search"><i class="ph ph-magnifying-glass" id="seeker-button"></i></button>
+                    </div>
+
+                    <div class="suggestions-list" id="suggestions-list">
+                        <ul id="product-list-in-search">
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <div class="first-line-options">
+                <div class="options">
+                    <a href="">
+                        <i class="ph ph-heart"></i>
+                        <span class="inner-a">Favoritos</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+
+                <div class="options">
+                    <a href="cart.html">
+                        <i class="ph ph-shopping-cart-simple"></i>
+                        <span class="inner-a">Carrito</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="second-line-options">
+            <ul>
+                <div class="dropdown-container">
+                    <button class="categories">
+                        <i class="ph ph-list"></i>
+                        Categorías
+                    </button>
+
+                    <div class="categories-menu">
+                        <ul>
+                            <li><a href="">Heladeras</a></li>
+                            <li><a href="">Lavarropas</a></li>
+                            <li><a href="">Cocinas</a></li>
+                            <li><a href="">Climatizacion</a></li>
+                            <li><a href="">Informatica</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <li><a href="">Ofertas</a></li>
+                <li><a href="">Electrodomésticos</a></li>
+                <li><a href="">Tecnología</a></li>
+                <li><a href="">Hogar</a></li>
+                <li><a href="">Climatización</a></li>
+                <li><a href="">TV y Audio</a></li>
+                <li><a href="">Mas vendidos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h1>Mi Cuenta</h1>
+        <div class="dashboard">
+            <aside>
+                <nav>
+                    <ul>
+                        <li class="aside-option"><i class="ph ph-house"></i>Resumen</li>
+                        <li class="aside-option"><i class="ph ph-handbag"></i>Mis pedidos</li>
+                        <li class="aside-option"><i class="ph ph-map-pin"></i>Direcciones</li>
+                        <li class="aside-option"><i class="ph ph-credit-card"></i>Métodos de pago</li>
+                        <li class="aside-option"><i class="ph ph-heart"></i>Favoritos</li>
+                        <li class="aside-option"><i class="ph ph-gear"></i>Configuración</li>
+                        <li id="aside-logout-btn"><i class="ph ph-sign-out "></i>Cerrar sesión</li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="dashboard-sections">
+                <section class="account-info-section">
+                    <div class="account-info">
+                        <div class="account-initials">
+                            <h2>SA</h2>
+                        </div>
+
+                        <div class="account-details">
+                            <h3>Santino Albornoz</h3>
+                            <p>sanalbor32@gmail.com</p>
+                            <p>+54 9 11 6439 4831</p>
+                        </div>
+                    </div>
+
+
+
+                    <button type="button" id="edit-profile-btn">
+                        <i class="ph ph-pencil-simple"></i>
+                        Editar perfil
+                    </button>
+                </section>
+
+                <div class="summary-sections">
+                    <section class="summary-section" id="orders-section">
+                        <div class="summary-section-header">
+                            <h4>Mis pedidos recientes</h4>
+                            <a href="">Ver todos</a>
+                        </div>
+
+                        <div class="summary-section-item">
+                            <div class="left-item-section">
+                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
+                                    class="order-image">
+
+
+                                <div class="order-product">
+                                    <p>Pedido #1234567890</p>
+                                    <h5>Nombre del producto</h5>
+                                    <p>15 Mayo 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="right-item-section">
+                                <div class="order-details">
+                                    <p>Cantidad: 1</p>
+                                    <h4>$45000</h4>
+                                </div>
+
+                                <div>
+                                    <i class="ph ph-caret-right summary-section-item-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-section-item">
+                            <div class="left-item-section">
+                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
+                                    class="order-image">
+
+
+                                <div class="order-product">
+                                    <p>Pedido #1234567890</p>
+                                    <h5>Nombre del producto</h5>
+                                    <p>15 Mayo 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="right-item-section">
+                                <div class="order-details">
+                                    <p>Cantidad: 1</p>
+                                    <h4>$45000</h4>
+                                </div>
+
+                                <div>
+                                    <i class="ph ph-caret-right summary-section-item-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-section-item">
+                            <div class="left-item-section">
+                                <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
+                                    class="order-image">
+
+
+                                <div class="order-product">
+                                    <p>Pedido #1234567890</p>
+                                    <h5>Nombre del producto</h5>
+                                    <p>15 Mayo 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="right-item-section">
+                                <div class="order-details">
+                                    <p>Cantidad: 1</p>
+                                    <h4>$45000</h4>
+                                </div>
+
+                                <div>
+                                    <i class="ph ph-caret-right summary-section-item-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                    <section class="summary-section" id="address-section">
+                        <div class="summary-section-header">
+                            <h4>Direcciones guardadas</h4>
+                            <a href="">Ver todos</a>
+                        </div>
+
+                        <div class="summary-section-item">
+                            <div class="left-item-section">
+                                <div class="">
+                                    <i class="ph ph-house-line saved-adress-icon"></i>
+                                </div>
+                                <div class="saved-address-details">
+                                    <div id="main-address">
+                                        <h5>Dirección 1</h5>
+                                        <div id="main-address-badge">
+                                            <p>Principal</p>
+                                        </div>
+                                    </div>
+                                    <p>Calle Falsa 123</p>
+                                    <p>1234567890</p>
+                                </div>
+                            </div>
+
+                            <div class="right-item-section">
+                                <div>
+                                    <i class="ph ph-dots-three-vertical summary-section-item-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section-item">
+                            <div class="left-item-section">
+                                <div class="">
+                                    <i class="ph ph-building-office saved-adress-icon"></i>
+                                </div>
+                                <div class="saved-address-details">
+                                    <h5>Dirección 2</h5>
+                                    <p>Calle Falsa 123</p>
+                                    <p>1234567890</p>
+                                </div>
+                            </div>
+
+                            <div class="right-item-section">
+                                <div>
+                                    <i class="ph ph-dots-three-vertical summary-section-item-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
