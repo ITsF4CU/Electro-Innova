@@ -30,12 +30,16 @@
 }
 
 .account-details h3 {
-    color: black;
+    color: #333;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    margin: 0;
 }
 
 .account-details span {
-    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: #666;
+    margin: 2px 0;
 }
 
 .account-initials {
@@ -119,7 +123,10 @@
 }
 
 .summary-section-header h4 {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 600;
+    color: #333;
+    margin: 0;
 }
 
 .summary-section-header a {
@@ -175,18 +182,26 @@
 .order-product span,
 .order-details span,
 .saved-address-details>span {
-    color: gray;
-    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    color: #666;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
-.order-product h4,
-.order-product h5,
-.order-details h5,
-.saved-address-details h5 {
-    font-size: clamp(0.9rem, 1vw, 1.1rem);
+.order-product h3,
+.saved-address-details h3 {
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #333;
+    font-weight: 500;
 }
 
-.order-product h4 {
+.order-details h4 {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.order-product h3 {
     overflow: hidden;
     text-overflow: ellipsis;
 }

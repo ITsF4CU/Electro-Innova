@@ -70,7 +70,7 @@ const htmlResumen = `
 
                 <div class="order-product">
                     <span class="order-card-info">Pedido #1234567890</span>
-                    <h5>Nombre del producto</h5>
+                    <h3>Nombre del producto</h3>
                     <span class="order-card-info">15 Mayo 2026</span>
                 </div>
             </div>
@@ -101,7 +101,7 @@ const htmlResumen = `
                 </div>
                 <div class="saved-address-details">
                     <div id="main-address">
-                        <h5>Dirección 1</h5>
+                        <h3>Dirección 1</h3>
                         <div class="main-badge">
                             <span>Principal</span>
                         </div>
@@ -126,7 +126,7 @@ const htmlResumen = `
                     <i class="ph ph-building-office saved-adress-icon"></i>
                 </div>
                 <div class="saved-address-details">
-                    <h5>Dirección 2</h5>
+                    <h3>Dirección 2</h3>
                     <span>Calle Falsa 123</span>
                     <span>1234567890</span>
                 </div>
