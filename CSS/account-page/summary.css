@@ -177,17 +177,26 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: start;
+    gap: 0.5vh;
+}
+
+.summary-address-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2px;
 }
 
 .order-product span,
 .order-details span,
-.saved-address-details>span {
+.summary-address-details>span {
     color: #666;
     font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
 .order-product h3,
-.saved-address-details h3 {
+.summary-address-details h3 {
     margin: 0;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
     color: #333;

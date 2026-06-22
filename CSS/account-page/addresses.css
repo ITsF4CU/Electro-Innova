@@ -1,0 +1,169 @@
+.addreses-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.address-section-header {
+    width: 100%;
+    height: 10%;
+}
+
+.saved-addresses-list {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 10px;
+}
+
+.saved-address-card {
+    height: fit-content;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5vh;
+}
+
+.saved-address-card-content {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    gap: 1vw;
+}
+
+.saved-address-details {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.saved-address-icon-container {
+    width: clamp(20px, 50px, 80px);
+    height: clamp(20px, 50px, 80px);
+    padding: 20px;
+    background-color: #f1f1ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saved-address-icon {
+    color: #0000ff;
+    font-size: 1.5rem;
+}
+
+
+
+#main-address-badge {
+    background-color: #e6e6ff;
+    color: #0000ff;
+    border-radius: 15px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-address-badge span {
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.saved-address-card-buttons {
+    max-height: min-content;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.saved-address-card-buttons button {
+    height: 5vh;
+    flex: 1 1 120px;
+    padding: 0px 15px;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.saved-address-card-buttons button i {
+    font-size: 1.25rem;
+}
+
+.edit-addres-btn {
+    color: #0000ff;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.edit-addres-btn:hover {
+    background-color: #f1f1ff;
+}
+
+.edit-addres-btn i {
+    color: #0000ff;
+}
+
+
+.delete-addres-btn {
+    color: #d42323;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.delete-addres-btn:hover {
+    background-color: #ffcece;
+}
+
+.delete-addres-btn i {
+    color: #d42323;
+}
+
+#add-new-address-btn {
+    width: 100%;
+    height: clamp(40px, 8vh, 60px);
+    border-radius: 10px;
+    border: 1px solid #0000ff;
+    background-color: white;
+    color: #0000ff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#add-new-address-btn:hover {
+    background-color: #f1f1ff;
+}
+
+#add-new-address-btn i {
+    color: #0000ff;
+    font-size: 1.25rem;
+}
+
+.saved-address-details h4 {
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #333;
+    font-weight: 500;
+}

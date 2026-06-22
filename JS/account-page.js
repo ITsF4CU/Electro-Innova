@@ -99,7 +99,7 @@ const htmlResumen = `
                 <div class="">
                     <i class="ph ph-house-line saved-adress-icon"></i>
                 </div>
-                <div class="saved-address-details">
+                <div class="summary-address-details">
                     <div id="main-address">
                         <h3>Dirección 1</h3>
                         <div class="main-badge">
@@ -125,7 +125,7 @@ const htmlResumen = `
                 <div class="">
                     <i class="ph ph-building-office saved-adress-icon"></i>
                 </div>
-                <div class="saved-address-details">
+                <div class="summary-address-details">
                     <h3>Dirección 2</h3>
                     <span>Calle Falsa 123</span>
                     <span>1234567890</span>
@@ -284,6 +284,58 @@ const htmlMisPedidos = `
                 </section>
 `;
 
+const htmlDirecciones = `
+            <section class="addreses-section">
+                <section class="saved-addresses-list">
+                    <div class="saved-address-card">
+                        <div class="saved-address-card-content">
+                            <div class="saved-address-icon-container">
+                                <i class="ph ph-house-line saved-address-icon"></i>
+                            </div>
+                            <address class="saved-address-details">
+                                <div id="main-address">
+                                    <h4>Casa</h4>
+                                    <div id="main-address-badge">
+                                        <span>Principal</span>
+                                    </div>
+                                </div>
+                                <span>Calle Falsa 123</span>
+                                <span>1234567890</span>
+                            </address>
+                        </div>
+
+                        <div class="saved-address-card-buttons">
+                            <button class="edit-addres-btn"><i class="ph ph-pencil"></i>Editar</button>
+                            <button class="delete-addres-btn"><i class="ph ph-trash"></i>Eliminar</button>
+                        </div>
+                    </div>
+
+                    <div class="saved-address-card">
+                        <div class="saved-address-card-content">
+                            <div class="saved-address-icon-container">
+                                <i class="ph ph-building-office saved-address-icon"></i>
+                            </div>
+                            <address class="saved-address-details">
+                                <h4>Trabajo</h4>
+                                <span>Calle Falsa 123</span>
+                                <span>1234567890</span>
+                            </address>
+                        </div>
+
+                        <div class="saved-address-card-buttons">
+                            <button class="edit-addres-btn"><i class="ph ph-pencil"></i>Editar</button>
+                            <button class="delete-addres-btn"><i class="ph ph-trash"></i>Eliminar</button>
+                        </div>
+                    </div>
+                </section>
+
+
+                <button id="add-new-address-btn"><i class="ph ph-plus-circle"></i>Agregar nueva dirección de
+                    envío</button>
+
+            </section>
+`;
+
 asideOptions.forEach(option => {
     option.addEventListener('click', (e) => {
         const optionName = e.currentTarget.textContent.trim();
@@ -319,6 +371,10 @@ function renderDashboardSection(section) {
         case 'Mis pedidos':
             dashboardContainer.innerHTML = htmlMisPedidos;
             asideOptions[1].classList.add('active');
+            break;
+        case 'Direcciones':
+            dashboardContainer.innerHTML = htmlDirecciones;
+            asideOptions[2].classList.add('active');
             break;
         default:
             dashboardContainer.innerHTML = `<h2>Sección "${section}" en construcción...</h2>`;
