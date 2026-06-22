@@ -433,6 +433,45 @@ const htmlMetodosPago = `
                 <button id="add-new-payment-method-btn"><i class="ph ph-plus-circle"></i>Agregar nuevo método de pago</button>
 
             </section>
+            </section>
+`;
+
+const htmlFavoritos = `
+            <section class="favorites-section">
+                <div class="favorites-list">
+                    <div class="favorite-card">
+                        <div class="favorite-card-left">
+                            <div class="favorite-image-container">
+                                <img src="Images/Products/Cocinas/cocina-1.png" alt="Cocina" class="favorite-image">
+                            </div>
+                            <div class="favorite-details">
+                                <h4>Cocina de Lujo Modelo X</h4>
+                                <span>$ 450.000</span>
+                            </div>
+                        </div>
+                        <div class="favorite-card-buttons">
+                            <button class="add-to-cart-btn"><i class="ph ph-shopping-cart-simple"></i>Añadir al carrito</button>
+                            <button class="remove-favorite-btn"><i class="ph ph-trash"></i>Eliminar</button>
+                        </div>
+                    </div>
+
+                    <div class="favorite-card">
+                        <div class="favorite-card-left">
+                            <div class="favorite-image-container">
+                                <img src="Images/Products/Heladeras/pngwing.com.png" alt="Heladera" class="favorite-image">
+                            </div>
+                            <div class="favorite-details">
+                                <h4>Heladera No Frost Inverter</h4>
+                                <span>$ 890.000</span>
+                            </div>
+                        </div>
+                        <div class="favorite-card-buttons">
+                            <button class="add-to-cart-btn"><i class="ph ph-shopping-cart-simple"></i>Añadir al carrito</button>
+                            <button class="remove-favorite-btn"><i class="ph ph-trash"></i>Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 `;
 
 asideOptions.forEach(option => {
@@ -478,6 +517,10 @@ function renderDashboardSection(section) {
         case 'Métodos de pago':
             dashboardContainer.innerHTML = htmlMetodosPago;
             asideOptions[3].classList.add('active');
+            break;
+        case 'Favoritos':
+            dashboardContainer.innerHTML = htmlFavoritos;
+            asideOptions[4].classList.add('active');
             break;
         default:
             dashboardContainer.innerHTML = `<h2>Sección "${section}" en construcción...</h2>`;

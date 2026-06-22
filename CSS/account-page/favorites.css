@@ -1,0 +1,137 @@
+.favorites-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.favorites-list {
+    width: 100%;
+    height: min-content;
+    display: grid;
+    gap: 10px;
+}
+
+.favorite-card {
+    width: 100%;
+    height: clamp(120px, 3vh, 150px);
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+    cursor: pointer;
+}
+
+.favorite-card-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.favorite-image-container {
+    width: clamp(50px, 12vw, 100px);
+    height: clamp(60px, 8vw, 80px);
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    flex-shrink: 0;
+    padding: 10px;
+    background-color: white;
+}
+
+.favorite-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.favorite-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1vh;
+}
+
+.favorite-details h4 {
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #333;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.favorite-details>span {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: #666;
+}
+
+.favorite-card-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-to-cart-btn,
+.remove-favorite-btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.add-to-cart-btn,
+.add-to-cart-btn i {
+    color: #0000ff;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #f1f1ff;
+}
+
+.remove-favorite-btn,
+.remove-favorite-btn i {
+    color: #d42323;
+}
+
+.remove-favorite-btn:hover {
+    background-color: #ffcece;
+}
+
+
+@media (max-width: 1024px) {
+    .favorite-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .favorite-card-buttons {
+        width: 100%;
+    }
+
+    .add-to-cart-btn,
+    .remove-favorite-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .favorite-card-buttons {
+        flex-direction: column;
+    }
+
+    .add-to-cart-btn,
+    .remove-favorite-btn {
+        width: 100%;
+    }
+}
