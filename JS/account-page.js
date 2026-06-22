@@ -474,6 +474,60 @@ const htmlFavoritos = `
             </section>
 `;
 
+const htmlConfiguracion = `
+            <section class="settings-section">
+                <div class="settings-list">
+                    <div class="settings-card">
+                        <div class="settings-card-left">
+                            <div class="settings-icon-container">
+                                <i class="ph ph-user settings-icon"></i>
+                            </div>
+                            <div class="settings-details">
+                                <h4>Datos personales</h4>
+                                <span>Edita tu nombre, correo y teléfono</span>
+                            </div>
+                        </div>
+                        <div class="settings-card-buttons">
+                            <button class="edit-settings-btn"><i class="ph ph-pencil"></i>Editar</button>
+                            <i class="ph ph-caret-right settings-arrow-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <div class="settings-card-left">
+                            <div class="settings-icon-container">
+                                <i class="ph ph-bell settings-icon"></i>
+                            </div>
+                            <div class="settings-details">
+                                <h4>Notificaciones</h4>
+                                <span>Configura tus alertas y correos</span>
+                            </div>
+                        </div>
+                        <div class="settings-card-buttons">
+                            <button class="edit-settings-btn"><i class="ph ph-pencil"></i>Editar</button>
+                            <i class="ph ph-caret-right settings-arrow-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <div class="settings-card-left">
+                            <div class="settings-icon-container">
+                                <i class="ph ph-lock-key settings-icon"></i>
+                            </div>
+                            <div class="settings-details">
+                                <h4>Seguridad</h4>
+                                <span>Cambia tu contraseña o método de acceso</span>
+                            </div>
+                        </div>
+                        <div class="settings-card-buttons">
+                            <button class="edit-settings-btn"><i class="ph ph-pencil"></i>Editar</button>
+                            <i class="ph ph-caret-right settings-arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+`;
+
 asideOptions.forEach(option => {
     option.addEventListener('click', (e) => {
         const optionName = e.currentTarget.textContent.trim();
@@ -521,6 +575,10 @@ function renderDashboardSection(section) {
         case 'Favoritos':
             dashboardContainer.innerHTML = htmlFavoritos;
             asideOptions[4].classList.add('active');
+            break;
+        case 'Configuración':
+            dashboardContainer.innerHTML = htmlConfiguracion;
+            asideOptions[5].classList.add('active');
             break;
         default:
             dashboardContainer.innerHTML = `<h2>Sección "${section}" en construcción...</h2>`;
