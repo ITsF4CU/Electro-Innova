@@ -142,6 +142,146 @@ const htmlResumen = `
         </div>
     </section>
 </section>
+</section>
+`;
+
+const htmlMisPedidos = `
+                <section class="orders-filters">
+                    <div class="search-input-container">
+                        <input type="text" placeholder="Buscar por número de pedido o producto...">
+                        <i class="ph ph-magnifying-glass"></i>
+                    </div>
+                    <div class="filter-dropdowns">
+                        <select class="status-filter">
+                            <option>Todos los estados</option>
+                            <option value="delivered">Entregado</option>
+                            <option value="in-transit">En camino</option>
+                            <option value="preparing">En preparacion</option>
+                            <option value="cancelled">Cancelado</option>
+                        </select>
+                        <select class="time-filter">
+                            <option value="all-time">Todos los tiempos</option>
+                            <option value="last-3-months">Últimos 3 meses</option>
+                            <option value="last-month">Último mes</option>
+                            <option value="last-year">Último año</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="orders-list">
+                    <div class="order-card">
+                        <div class="order-card-main">
+                            <div class="order-card-left">
+                                <div class="order-image-container">
+                                    <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
+                                        alt="Heladera No Frost" class="order-card-image">
+                                </div>
+                                <div class="order-info">
+                                    <h3>Heladera No Frost</h3>
+                                    <p>15 Mayo 2024 &bull; Pedido #EI-2024-1003</p>
+                                </div>
+                            </div>
+                            <div class="order-card-right">
+                                <span class="order-price">$899.999</span>
+                                <button class="btn-details">Ver detalles</button>
+                                <i class="ph ph-caret-right right-arrow-icon"></i>
+                            </div>
+                        </div>
+                        <div class="order-card-footer">
+                            <div class="delivery-status">
+                                <i class="ph ph-truck"></i>
+                                <span>Entregado el 17 Mayo 2024</span>
+                            </div>
+                            <div class="product-count">
+                                <i class="ph ph-package"></i>
+                                <span>1 producto</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-main">
+                            <div class="order-card-left">
+                                <div class="order-image-container">
+                                    <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
+                                        alt="Smart TV 55&quot; 4K" class="order-card-image">
+                                </div>
+                                <div class="order-info">
+                                    <h3>Smart TV 55" 4K</h3>
+                                    <p>10 Mayo 2024 &bull; Pedido #EI-2024-1002</p>
+                                </div>
+                            </div>
+                            <div class="order-card-right">
+                                <span class="order-price">$549.999</span>
+                                <button class="btn-details">Ver detalles</button>
+                                <i class="ph ph-caret-right right-arrow-icon"></i>
+                            </div>
+                        </div>
+                        <div class="order-card-footer">
+                            <div class="delivery-status text-blue">
+                                <i class="ph ph-truck"></i>
+                                <span>En camino &bull; Entrega estimada: 13 Mayo 2024</span>
+                            </div>
+                            <div class="product-count">
+                                <i class="ph ph-package"></i>
+                                <span>1 producto</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-main">
+                            <div class="order-card-left">
+                                <div class="order-image-container">
+                                    <img src="Images/Products/conjunto-frigorificos-plata-realistas-varios-tamanos-aislado-blanco.png"
+                                        alt="Auriculares Inalámbricos" class="order-card-image">
+                                </div>
+                                <div class="order-info">
+                                    <h3>Auriculares Inalámbricos</h3>
+                                    <p>5 Mayo 2024 &bull; Pedido #EI-2024-1001</p>
+                                </div>
+                            </div>
+                            <div class="order-card-right">
+                                <span class="order-price">$89.999</span>
+                                <button class="btn-details">Ver detalles</button>
+                                <i class="ph ph-caret-right right-arrow-icon"></i>
+                            </div>
+                        </div>
+                        <div class="order-card-footer">
+                            <div class="delivery-status text-grey">
+                                <i class="ph ph-clipboard-text"></i>
+                                <span>En preparacion &bull; Entrega estimada: 11 Mayo 2024</span>
+                            </div>
+                            <div class="product-count">
+                                <i class="ph ph-package"></i>
+                                <span>1 producto</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <nav class="pagination" aria-label="Paginación de pedidos">
+                    <button class="page-btn"><i class="ph ph-caret-left pagination-arrow"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn"><i class="ph ph-caret-right pagination-arrow"></i></button>
+                </nav>
+
+                <section class="help-section">
+                    <div class="help-content">
+                        <div class="help-icon-container">
+                            <i class="ph ph-headset"></i>
+                        </div>
+                        <div class="help-text">
+                            <h4>¿Necesitas ayuda con tu pedido?</h4>
+                            <p>Nuestro equipo de atención está disponible para ayudarte.</p>
+                        </div>
+                    </div>
+                    <button class="btn-support">
+                        <i class="ph ph-headset"></i>
+                        Contactar soporte
+                    </button>
+                </section>
 `;
 
 asideOptions.forEach(option => {
@@ -175,6 +315,10 @@ function renderDashboardSection(section) {
         case 'Resumen':
             dashboardContainer.innerHTML = htmlResumen;
             asideOptions[0].classList.add('active');
+            break;
+        case 'Mis pedidos':
+            dashboardContainer.innerHTML = htmlMisPedidos;
+            asideOptions[1].classList.add('active');
             break;
         default:
             dashboardContainer.innerHTML = `<h2>Sección "${section}" en construcción...</h2>`;
