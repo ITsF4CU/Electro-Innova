@@ -1,0 +1,105 @@
+.payment-methods-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.saved-payment-methods-list {
+    width: 100%;
+    height: min-content;
+    display: grid;
+    gap: 10px;
+}
+
+.saved-payment-method-card {
+    width: 100%;
+    height: clamp(120px, 3vh, 150px);
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.payment-method-icon-container {
+    width: clamp(50px, 12vw, 100px);
+    height: clamp(60px, 8vw, 80px);
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.payment-method-icon-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.saved-payment-method-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1vh;
+}
+
+.saved-payment-method-details h4 {
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #333;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.saved-payment-method-details>span {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: #666;
+}
+
+#add-new-payment-method-btn {
+    width: 100%;
+    height: clamp(40px, 8vh, 60px);
+    border-radius: 10px;
+    border: 1px solid #0000ff;
+    background-color: white;
+    color: #0000ff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-top: 15px;
+}
+
+#add-new-payment-method-btn:hover {
+    background-color: #f1f1ff;
+}
+
+#add-new-payment-method-btn i {
+    color: #0000ff;
+    font-size: 1.25rem;
+}
+
+.main-payment-method {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@media (max-width: 500px) {
+    .main-payment-method {
+        flex-direction: column;
+        align-items: start;
+    }
+}

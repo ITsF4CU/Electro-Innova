@@ -336,6 +336,105 @@ const htmlDirecciones = `
             </section>
 `;
 
+const htmlMetodosPago = `
+            <section class="payment-methods-section">
+                <div class="saved-payment-methods-list">
+                    <div class="saved-payment-method-card">
+                        <div class="card-left">
+                            <div class="payment-method-icon-container">
+                                <img src="Images/Payment-methods/verified-by-visa-logo-png-0.png" alt="" class="payment-method-icon-img">
+                            </div>
+                            <div class="saved-payment-method-details">
+                                <div class="main-payment-method">
+                                    <h4>Visa terminada en 3456</h4>
+                                    <div class="main-badge">
+                                        <span>Predeterminado</span>
+                                    </div>
+                                </div>
+                                <span>Vence: 12/28</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="dropdown-icon-btn-container">
+                            <button class="dropdown-icon-btn"><i class="ph ph-dots-three-vertical"></i></button>
+                            <div class="dropdown-icon-btn-options">
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-pencil"></i>Editar</div>
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-trash"></i>Eliminar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="saved-payment-method-card">
+                        <div class="card-left">
+                            <div class="payment-method-icon-container">
+                                <img src="Images/Payment-methods/Mastercard-Logo-2016-2020-700x394.png" alt="" class="payment-method-icon-img">
+                            </div>
+                            <div class="saved-payment-method-details">
+                                <h4>Mastercard terminada en 6589</h4>
+                                <span>Vence: 06/27</span>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-icon-btn-container">
+                            <button class="dropdown-icon-btn"><i class="ph ph-dots-three-vertical"></i></button>
+                            <div class="dropdown-icon-btn-options">
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-pencil"></i>Editar</div>
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-trash"></i>Eliminar</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="saved-payment-method-card">
+                        <div class="card-left">
+                            <div class="payment-method-icon-container">
+                                <img src="Images/Payment-methods/free-payment-icon-svg-download-png-51314.png" alt="" class="payment-method-icon-img">
+                            </div>
+                            <div class="saved-payment-method-details">
+                                <h4>American Express terminada en 2311</h4>
+                                <span>Vence: 02/29</span>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-icon-btn-container">
+                            <button class="dropdown-icon-btn"><i class="ph ph-dots-three-vertical"></i></button>
+                            <div class="dropdown-icon-btn-options">
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-pencil"></i>Editar</div>
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-trash"></i>Eliminar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="saved-payment-method-card">
+                        <div class="card-left">
+                            <div class="payment-method-icon-container">
+                                <img src="Images/Payment-methods/free-mercado-pago-icon-svg-download-png-14549373.png" alt=""
+                                    class="payment-method-icon-img">
+                            </div>
+                            <div class="saved-payment-method-details">
+                                <h4>Mercado Pago</h4>
+                                <span>Cuenta vinculada</span>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-icon-btn-container">
+                            <button class="dropdown-icon-btn"><i class="ph ph-dots-three-vertical"></i></button>
+                            <div class="dropdown-icon-btn-options">
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-pencil"></i>Editar</div>
+                                <div class="dropdown-icon-btn-option"><i class="ph ph-trash"></i>Eliminar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="add-new-payment-method-btn"><i class="ph ph-plus-circle"></i>Agregar nuevo método de pago</button>
+
+            </section>
+`;
+
 asideOptions.forEach(option => {
     option.addEventListener('click', (e) => {
         const optionName = e.currentTarget.textContent.trim();
@@ -375,6 +474,10 @@ function renderDashboardSection(section) {
         case 'Direcciones':
             dashboardContainer.innerHTML = htmlDirecciones;
             asideOptions[2].classList.add('active');
+            break;
+        case 'Métodos de pago':
+            dashboardContainer.innerHTML = htmlMetodosPago;
+            asideOptions[3].classList.add('active');
             break;
         default:
             dashboardContainer.innerHTML = `<h2>Sección "${section}" en construcción...</h2>`;
