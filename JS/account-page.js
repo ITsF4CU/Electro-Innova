@@ -60,7 +60,7 @@ const htmlResumen = `
     <section class="summary-section" id="orders-section">
         <div class="summary-section-header">
             <h4>Mis pedidos recientes</h4>
-            <a href="">Ver todos</a>
+            <a href="#" id="view-all-orders-btn">Ver todos</a>
         </div>
 
         <div class="summary-section-item">
@@ -91,7 +91,7 @@ const htmlResumen = `
     <section class="summary-section" id="address-section">
         <div class="summary-section-header">
             <h4>Direcciones guardadas</h4>
-            <a href="">Ver todos</a>
+            <a href="#" id="view-all-addresses-btn">Ver todos</a>
         </div>
 
         <div class="summary-section-item">
@@ -559,6 +559,22 @@ function renderDashboardSection(section) {
         case 'Resumen':
             dashboardContainer.innerHTML = htmlResumen;
             asideOptions[0].classList.add('active');
+
+            const viewAllOrdersBtn = document.getElementById('view-all-orders-btn');
+            if (viewAllOrdersBtn) {
+                viewAllOrdersBtn.addEventListener('click', (e) => {
+                    asideOptions.forEach(opt => opt.classList.remove('active'));
+                    renderDashboardSection('Mis pedidos');
+                });
+            }
+
+            const viewAllAddressesBtn = document.getElementById('view-all-addresses-btn');
+            if (viewAllAddressesBtn) {
+                viewAllAddressesBtn.addEventListener('click', (e) => {
+                    asideOptions.forEach(opt => opt.classList.remove('active'));
+                    renderDashboardSection('Direcciones');
+                });
+            }
             break;
         case 'Mis pedidos':
             dashboardContainer.innerHTML = htmlMisPedidos;
