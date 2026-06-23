@@ -532,12 +532,6 @@ asideOptions.forEach(option => {
     option.addEventListener('click', (e) => {
         const optionName = e.currentTarget.textContent.trim();
 
-        // Remover la clase activa de todas las opciones
-        asideOptions.forEach(opt => opt.classList.remove('active'));
-
-        // Agregar la clase activa a la opción clickeada
-        e.currentTarget.classList.add('active');
-
         renderDashboardSection(optionName);
     });
 });
@@ -554,6 +548,8 @@ if (logoutBtn) {
 }
 
 function renderDashboardSection(section) {
+    // Remover la clase activa de todas las opciones
+    asideOptions.forEach(opt => opt.classList.remove('active'));
 
     switch (section) {
         case 'Resumen':
@@ -562,16 +558,14 @@ function renderDashboardSection(section) {
 
             const viewAllOrdersBtn = document.getElementById('view-all-orders-btn');
             if (viewAllOrdersBtn) {
-                viewAllOrdersBtn.addEventListener('click', (e) => {
-                    asideOptions.forEach(opt => opt.classList.remove('active'));
+                viewAllOrdersBtn.addEventListener('click', () => {
                     renderDashboardSection('Mis pedidos');
                 });
             }
 
             const viewAllAddressesBtn = document.getElementById('view-all-addresses-btn');
             if (viewAllAddressesBtn) {
-                viewAllAddressesBtn.addEventListener('click', (e) => {
-                    asideOptions.forEach(opt => opt.classList.remove('active'));
+                viewAllAddressesBtn.addEventListener('click', () => {
                     renderDashboardSection('Direcciones');
                 });
             }
