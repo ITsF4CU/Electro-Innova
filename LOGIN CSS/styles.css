@@ -1,0 +1,173 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+.login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.login-window {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-2 {
+    display: none
+}
+
+.login-2.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem
+}
+
+.logo-container {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.formulario {
+    background: linear-gradient(to top, rgb(0, 10, 48), rgb(11, 2, 139));
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: #ffffff
+}
+
+form h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+.user-data label {
+    font-weight: 500;
+    font-size: 0.95rem
+}
+
+.user-data input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: rgb(1, 21, 129);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e0e0e0;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.create-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-account a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+    color: rgb(190, 190, 190)
+}
+
+.terms-description {
+    font-family: 'Montserrat';
+}
+
+.legal-link {
+    text-decoration: none;
+    color: rgb(116, 107, 245);
+    transition: color;
+    font-family: 'Montserrat';
+    transition: color 0.2s;
+}
+
+.legal-link:hover {
+    color: rgb(250, 0, 0)
+}
+
+.casilla {
+    cursor: pointer
+}
+@media (orientation: portrait) {
+    .formulario {
+        width: 100%;
+        height: 100%;
+    }
+}
