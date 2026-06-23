@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/work-with-us.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <main class="work-with-us-container">
+        <section class="join-team-section">
+            <div class="brand-logo-header">
+                <img src="Images/Identity/ChatGPT Image 1 jun 2026, 01_32_26 p.m..png" alt="Electro Innova Logo" class="form-logo">
+            </div>
+            <div class="join-header">
+                <h2>Sumate al equipo de Electro-Innova</h2>
+                <p>Buscamos talentos apasionados por la tecnología y la innovación. Dejanos tus datos y formá parte de nuestro futuro.</p>
+            </div>
+
+            <form id="work-form" class="work-form">
+                <fieldset class="form-section">
+                    <legend><i class="ph ph-user"></i> Datos Personales</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="applicant-name">Nombre completo *</label>
+                            <input type="text" id="applicant-name" name="name" required placeholder="Ej: Carlos Gómez">
+                        </div>
+                        <div class="form-group">
+                            <label for="applicant-email">Correo electrónico *</label>
+                            <input type="email" id="applicant-email" name="email" required placeholder="ejemplo@correo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="applicant-phone">Teléfono de contacto *</label>
+                            <input type="tel" id="applicant-phone" name="phone" required placeholder="Ej: 3863xxxxxx">
+                        </div>
+                        <div class="form-group">
+                            <label for="applicant-city">Ciudad / Ubicación *</label>
+                            <input type="text" id="applicant-city" name="city" required placeholder="Ej: Monteros, Tucumán">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend><i class="ph ph-briefcase"></i> Perfil Profesional</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="applicant-area">Área de interés *</label>
+                            <select id="applicant-area" name="area" required>
+                                <option value="" disabled selected>Selecciona un área...</option>
+                                <option value="desarrollo">Desarrollo de Software / IT</option>
+                                <option value="ventas">Ventas y Atención al Cliente</option>
+                                <option value="soporte">Soporte Técnico y Reparaciones</option>
+                                <option value="marketing">Marketing y Diseño Digital</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicant-linkedin">Perfil de LinkedIn / Portfolio (Opcional)</label>
+                            <input type="url" id="applicant-linkedin" name="linkedin" placeholder="https://linkedin.com/in/tu-perfil">
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="applicant-message">Contanos brevemente sobre vos y tu experiencia *</label>
+                        <textarea id="applicant-message" name="message" rows="4" required placeholder="Escribí acá qué te motiva a sumarte a Electro-Innova..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend><i class="ph ph-file-pdf"></i> Currículum Vitae</legend>
+                    <div class="form-group file-drop-zone">
+                        <label for="applicant-cv" class="file-label">
+                            <i class="ph ph-cloud-arrow-up"></i>
+                            <span>Subí tu CV acá (Formatos aceptados: PDF, DOCX)*</span>
+                            <input type="file" id="applicant-cv" name="cv" accept=".pdf,.docx" required>
+                        </label>
+                        <div id="file-name-preview" class="file-preview"></div>
+                    </div>
+                </fieldset>
+
+                <div class="form-submit-container">
+                    <button type="submit" class="btn-submit-work">Enviar Postulación</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+        <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <h2 class="footer-logo">Electro <span>Innova</span></h2>
+                <p class="footer-description">
+                    Líderes en tecnología, electrodomésticos y soluciones innovadoras para tu hogar. Calidad y confianza en cada compra.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#" aria-label="Linkedin"><i class="ph ph-linkedin-logo"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="cart.html">Mi Carrito</a></li>
+                    <li><a href="account.html">Mi Cuenta</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-section">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="help.html">Preguntas Frecuentes</a></li>
+                    <li><a href="terms-conditions.html">Términos y Condiciones</a></li>
+                    <li><a href="privacy-policy.html">Políticas de Privacidad</a></li>
+                    <li><a href="work-with-us.html">Trabajá con nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-section">
+                <h3>Contacto</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="ph ph-map-pin"></i>
+                        <span>Monteros, Tucumán, Argentina</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-phone"></i>
+                        <span>+54 (3863) 123-456</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-envelope"></i>
+                        <span>soporte@electroinnova.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 Electro Innova. Todos los derechos reservados.</p>
+                <div class="footer-payment-methods">
+                    <i class="ph ph-credit-card" title="Tarjetas de Crédito/Débito"></i>
+                    <i class="ph ph-bank" title="Transferencias Bancarias"></i>
+                    <i class="ph ph-barcode" title="Pago Fácil / Rapipago"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
