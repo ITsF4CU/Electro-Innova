@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
     <header>
         <div class="blue-nav">
@@ -77,7 +79,7 @@
                         <span class="notification"></span>
                     </a>
                 </div>
-            
+
                 <div class="options">
                     <a href="cart.html">
                         <i class="ph ph-shopping-cart-simple"></i>
@@ -248,12 +250,12 @@
                         <label for="card-bank">Banco Emisor</label>
                         <input type="text" id="card-bank" placeholder="Ej. Banco Nación, Santander, Galicia" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="card-number">Número de Tarjeta</label>
                         <input type="text" id="card-number" maxlength="16" placeholder="1234 5678 1234 5678" required>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="card-expiry">Vencimiento</label>
@@ -264,8 +266,41 @@
                             <input type="password" id="card-cvv" maxlength="3" placeholder="123" required>
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn-submit-card">Guardar Método de Pago</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="address-modal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="ph ph-map-pin"></i> Agregar Nueva Dirección</h3>
+                    <button id="close-address-modal-btn" class="close-btn"><i class="ph ph-x"></i></button>
+                </div>
+                <form id="add-address-form">
+                    <div class="form-group">
+                        <label for="address-street">Calle y Número</label>
+                        <input type="text" id="address-street" placeholder="Ej. San Martin 123" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address-city">Ciudad</label>
+                        <input type="text" id="address-city" placeholder="Ej. San Miguel de Tucumán" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-state">Provincia</label>
+                            <input type="text" id="address-state" placeholder="Ej. Tucumán" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-zip">Código Postal</label>
+                            <input type="text" id="address-zip" placeholder="Ej. 4000" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit-card">Guardar Dirección</button>
                 </form>
             </div>
         </div>
@@ -277,4 +312,5 @@
     <script type="module" src="JS/account-view.js"></script>
     <script type="module" src="JS/interaction/header-control.js"></script>
 </body>
+
 </html>

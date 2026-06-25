@@ -1,4 +1,5 @@
 import { sessionStorageService } from "./services/session_storage_service.js";
+import { userStorageService } from "./services/user_storage_service.js";
 import { paymentService } from "./services/payment-service.js";
 import { orderService } from "../JS/services/order-service.js";
 import { renderOrderCards } from "./renders/render-orders.js";
@@ -110,12 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "direcciones": `
                 <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid gainsboro;">
                     <h3 style="margin-bottom: 15px; color: #1e293b;"><i class="ph ph-map-pin" style="color: black"></i> Mis Direcciones</h3>
-                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 4px solid #3030b4;">
-                        <p style="font-weight: 600; color: #1e293b;">Domicilio de Entrega Principal</p>
-                        <p style="font-size: 0.9rem; color: #64748b; margin: 5px 0;">Calle Rivadavia 450, Monteros, Tucumán</p>
-                        <span style="font-size: 0.8rem; background: #e2e8f0; padding: 3px 8px; border-radius: 4px; color: #475569;">Predeterminado</span>
+                    <div id="addresses-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
+                        ${(!currentUser.addresses || currentUser.addresses.length === 0) ?
+                    `<p style="color: #64748b; font-style: italic;">No tenés direcciones asociadas.</p>` :
+                    currentUser.addresses.map((addr, index) => `
+                                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; ${index === 0 ? 'border-left: 4px solid #3030b4;' : ''}">
+                                    <p style="font-weight: 600; color: #1e293b;">Domicilio de Entrega ${index === 0 ? 'Principal' : ''}</p>
+                                    <p style="font-size: 0.9rem; color: #64748b; margin: 5px 0;">${addr.street}, ${addr.city}, ${addr.state} (CP: ${addr.zip})</p>
+                                    ${index === 0 ? `<span style="font-size: 0.8rem; background: #e2e8f0; padding: 3px 8px; border-radius: 4px; color: #475569;">Predeterminado</span>` : ''}
+                                </div>
+                            `).join('')
+                }
                     </div>
-                    <button style="margin-top: 15px; background: #3030b4; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 500;">
+                    <button id="btn-add-address-view" style="margin-top: 15px; background: #3030b4; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 500;">
                         + Agregar nueva dirección
                     </button>
                 </div>
@@ -124,9 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid gainsboro;">
                     <h3 style="margin-bottom: 15px; color: #1e293b;"><i class="ph ph-credit-card" style="color: black"></i> Métodos de Pago</h3>
                     <div id="cards-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
-                        ${tarjetasReales.length === 0 ? 
-                            `<p style="color: #64748b; font-style: italic;">No tenés tarjetas asociadas.</p>` : 
-                            tarjetasReales.map(tarjeta => `
+                        ${tarjetasReales.length === 0 ?
+                    `<p style="color: #64748b; font-style: italic;">No tenés tarjetas asociadas.</p>` :
+                    tarjetasReales.map(tarjeta => `
                                 <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 15px;">
                                     <div style="font-size: 2rem; color: #1e293b;"><i class="ph ph-credit-card"></i></div>
                                     <div>
@@ -135,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     </div>
                                 </div>
                             `).join('')
-                        }
+                }
                     </div>
                     <button id="btn-add-card-view" style="margin-top: 15px; background: none; border: 1px dashed #3030b4; color: #3030b4; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 500; width: 100%;">
                         Asociar nueva tarjeta de crédito o débito
@@ -191,17 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const contenidoHtml = getContenidoDinamico(opcionSeleccionada);
                 if (contenidoHtml) {
                     dashboardSections.innerHTML = contenidoHtml;
-                
+
                     if (opcionSeleccionada === "favoritos") {
-                    
+
                         const favoritos =
                             JSON.parse(localStorage.getItem("favoritos")) || [];
-                    
+
                         const container =
                             document.getElementById("favoritos-container");
-                    
+
                         if (favoritos.length === 0) {
-                        
+
                             container.innerHTML = `
                                 <p style="
                                     color:#64748b;
@@ -211,15 +219,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                     No tenés productos guardados en tu lista de favoritos todavía.
                                 </p>
                             `;
-                        
+
                         } else {
-                        
+
                             favoritos.forEach(producto => {
                                 container.appendChild(
                                     renderizarCardFavorito(producto)
                                 );
                             });
-                        
+
                         }
                     }
                 }
@@ -255,13 +263,60 @@ document.addEventListener('DOMContentLoaded', () => {
         dashboardSections.innerHTML = contenidoActualizado;
     });
 
+    // MANEJO DEL MODAL DE DIRECCIONES
+    const addressModal = document.getElementById('address-modal');
+    const addAddressForm = document.getElementById('add-address-form');
+    const closeAddressModalBtn = document.getElementById('close-address-modal-btn');
+
+    dashboardSections.addEventListener('click', (e) => {
+        if (e.target.closest('#btn-add-address-view')) {
+            addressModal.classList.add('active');
+        }
+    });
+
+    closeAddressModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        addressModal.classList.remove('active');
+        addAddressForm.reset();
+    });
+
+    addressModal.addEventListener('click', (e) => {
+        if (e.target === addressModal) {
+            addressModal.classList.remove('active');
+            addAddressForm.reset();
+        }
+    });
+
+    addAddressForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const street = document.getElementById('address-street').value;
+        const city = document.getElementById('address-city').value;
+        const state = document.getElementById('address-state').value;
+        const zip = document.getElementById('address-zip').value;
+
+        if (!currentUser.addresses) {
+            currentUser.addresses = [];
+        }
+
+        currentUser.addresses.push({ street, city, state, zip });
+        userStorageService.updateUser(currentUser);
+
+        // Actualiza la pestaña de direcciones
+        const contenidoActualizado = getContenidoDinamico("direcciones");
+        dashboardSections.innerHTML = contenidoActualizado;
+
+        addressModal.classList.remove('active');
+        addAddressForm.reset();
+        alert('Dirección guardada con éxito.');
+    });
+
     // EVENTOS PARA LOS BOTONES DE PRODUCTOS FAVORITOS
     dashboardSections.addEventListener('click', (e) => {
         const card = e.target.closest('.fav-product-card');
         if (!card) return;
 
         let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-        
+
         const nombreProducto = card.querySelector('.fav-info-container h4').textContent.trim();
         const productoSeleccionado = favoritos.find(prod => prod.nombre === nombreProducto);
 
@@ -271,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.closest('.btn-fav-remove')) {
             favoritos = favoritos.filter(prod => prod.nombre !== nombreProducto);
             localStorage.setItem("favoritos", JSON.stringify(favoritos));
-            
+
             const container = document.getElementById("favoritos-container") || document.getElementById("fav-products-container");
             if (container) {
                 container.innerHTML = '';
@@ -306,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            
+
             alert(`¡"${productoSeleccionado.nombre}" se agregó al carrito correctamente!`);
         }
     });
@@ -318,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!btnDetails) return;
 
         const orderId = btnDetails.dataset.orderId;
-        
+
         const ordenes = orderService.getUserOrders();
         const ordenSeleccionada = ordenes.find(o => o.id === orderId);
 
