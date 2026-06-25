@@ -86,7 +86,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -184,7 +184,8 @@
     flex-wrap: wrap;
 }
 
-.delivery-status, .product-count {
+.delivery-status,
+.product-count {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -192,7 +193,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.delivery-status i, .product-count i {
+.delivery-status i,
+.product-count i {
     font-size: 1.1rem;
 }
 
@@ -360,21 +362,29 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 40px); 
-    overflow-y: auto; 
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 
 .modal-content::-webkit-scrollbar {
     width: 6px;
 }
+
 .modal-content::-webkit-scrollbar-thumb {
     background-color: #cbd5e1;
     border-radius: 4px;
 }
 
 @keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .modal-header {
@@ -410,16 +420,19 @@
     padding: 5px;
 }
 
-.close-btn:hover { 
-    color: #ef4444; 
+.close-btn:hover {
+    color: #ef4444;
 }
 
-#add-card-form {
+#add-card-form,
+#add-address-form {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 18px;
 }
+
+
 
 .form-group {
     display: flex;
@@ -483,8 +496,8 @@
     flex-shrink: 0;
 }
 
-.btn-submit-card:hover { 
-    background: #1e1e82; 
+.btn-submit-card:hover {
+    background: #1e1e82;
 }
 
 .btn-submit-card:active {
@@ -495,11 +508,11 @@
     .modal-content {
         padding: 20px;
     }
-    
+
     .modal-header h3 {
         font-size: 1.1rem;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 18px;
