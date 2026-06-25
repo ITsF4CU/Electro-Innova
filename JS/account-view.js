@@ -163,16 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
             "configuración": `
                 <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid gainsboro;">
                     <h3 style="margin-bottom: 20px; color: #1e293b;"><i class="ph ph-gear" style="color:black"></i> Configuración de la Cuenta</h3>
-                    <form style="display: flex; flex-direction: column; gap: 15px; max-width: 400px;">
+                    <form id="config-form" style="display: flex; flex-direction: column; gap: 15px; max-width: 400px;">
                         <div>
                             <label style="display: block; font-size: 0.85rem; color: #475569; margin-bottom: 5px;">Nombre Completo</label>
-                            <input type="text" value="${currentUser.name}" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;" readonly>
+                            <input type="text" id="config-name" value="${currentUser.name}" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;" required>
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.85rem; color: #475569; margin-bottom: 5px;">Nueva Contraseña</label>
-                            <input type="password" placeholder="••••••••" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                            <input type="password" id="config-password" placeholder="••••••••" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
                         </div>
-                        <button type="button" style="background: #3030b4; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 500;">Guardar Cambios</button>
+                        <button type="submit" style="background: #3030b4; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: 500;">Guardar Cambios</button>
                     </form>
                 </div>
             `
@@ -308,6 +308,37 @@ document.addEventListener('DOMContentLoaded', () => {
         addressModal.classList.remove('active');
         addAddressForm.reset();
         alert('Dirección guardada con éxito.');
+    });
+
+    // MANEJO DE ACTUALIZACIÓN DE CONFIGURACIÓN
+    dashboardSections.addEventListener('submit', (e) => {
+        if (e.target.id === 'config-form') {
+            e.preventDefault();
+
+            const newName = document.getElementById('config-name').value.trim();
+            const newPassword = document.getElementById('config-password').value.trim();
+
+            if (newName) {
+                currentUser.name = newName;
+
+                // Se actualiza el nombre en el header
+                const userBtn = document.getElementById('user-btn');
+                if (userBtn) {
+                    const primerNombre = currentUser.name.split(" ")[0];
+                    userBtn.innerHTML = `<i class="ph ph-user-circle"></i> Hola, ${primerNombre}`;
+                }
+            }
+
+            if (newPassword) {
+                currentUser.password = newPassword;
+            }
+
+            userStorageService.updateUser(currentUser);
+            alert("Los datos de tu cuenta han sido actualizados con éxito.");
+
+            // Se limpia el campo de contraseña por seguridad
+            document.getElementById('config-password').value = '';
+        }
     });
 
     // EVENTOS PARA LOS BOTONES DE PRODUCTOS FAVORITOS
