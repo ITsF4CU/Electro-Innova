@@ -169,6 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             <input type="text" id="config-name" value="${currentUser.name}" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;" required>
                         </div>
                         <div>
+                            <label style="display: block; font-size: 0.85rem; color: #475569; margin-bottom: 5px;">Correo Electrónico</label>
+                            <input type="email" id="config-email" value="${currentUser.email}" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;" required>
+                        </div>
+                        <div>
                             <label style="display: block; font-size: 0.85rem; color: #475569; margin-bottom: 5px;">Nueva Contraseña</label>
                             <input type="password" id="config-password" placeholder="••••••••" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
                         </div>
@@ -316,6 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const newName = document.getElementById('config-name').value.trim();
+            const newEmail = document.getElementById('config-email').value.trim();
             const newPassword = document.getElementById('config-password').value.trim();
 
             if (newName) {
@@ -327,6 +332,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const primerNombre = currentUser.name.split(" ")[0];
                     userBtn.innerHTML = `<i class="ph ph-user-circle"></i> Hola, ${primerNombre}`;
                 }
+            }
+
+            if (newEmail) {
+                currentUser.email = newEmail;
             }
 
             if (newPassword) {
