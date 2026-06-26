@@ -410,18 +410,18 @@ form input[type="text"] {
 }
 
 .slide-1 {
-    background-image: url(/Images/Banners/BANNER-1.png);
+    background-image: url(../Images/Banners/BANNER-1.png);
     width: 100%
 }
 
 .slide-2 {
-    background-image: url(/Images/Banners/BANNER-3.png);
+    background-image: url(../Images/Banners/BANNER-3.png);
     background-position: center;
     width: 100%
 }
 
 .slide-3 {
-    background-image: url(/Images/Banners/BANNER-4-RESPONSIVE.png);
+    background-image: url(../Images/Banners/BANNER-4-RESPONSIVE.png);
     width: 100%
 }
 
@@ -781,7 +781,7 @@ form input[type="text"] {
     max-width: 1400px;
     background-color: #0000c7;
     height: 150px;
-    background-image: url(/Images/Banners/FOOTER-BANNER.png);
+    background-image: url(../Images/Banners/FOOTER-BANNER.png);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -887,13 +887,13 @@ form input[type="text"] {
 
 @media (max-width: 1700px) {
     .slide-1 {
-        background-image: url(/Images/Banners/BANNER-1-RESPONSIVE.png);
+        background-image: url(../Images/Banners/BANNER-1-RESPONSIVE.png);
         background-position: center;
         background-size: cover;
     }
 
     .slide-2 {
-        background-image: url(/Images/Banners/BANNER-3-RESPONSIVE.png);
+        background-image: url(../Images/Banners/BANNER-3-RESPONSIVE.png);
         background-position: center;
         background-size: cover;
     }
@@ -906,6 +906,6 @@ form input[type="text"] {
     .footer-banner-design {
         background-position: center;
         background-size: cover;
-        background-image: url(/Images/Banners/FOOTER-BANNER-RESPONSIVE.png);
+        background-image: url(../Images/Banners/FOOTER-BANNER-RESPONSIVE.png);
     }
 }
