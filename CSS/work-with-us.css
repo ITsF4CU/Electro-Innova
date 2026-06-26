@@ -1,0 +1,219 @@
+/* Variables entregadas por el usuario */
+:root {
+    --azul-electrico: #0000ff;
+    --blanco: white;
+    --logo-color: rgb(116, 112, 112);
+    --sombreado: rgb(192, 179, 179);
+    --color-de-texto: black;
+    --hover-color: #0011aa;
+}
+
+body {
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+/* Contenedor General */
+.work-with-us-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    color: var(--color-de-texto);
+}
+
+/* Encabezado */
+.join-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.join-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--azul-electrico);
+    margin-bottom: 10px;
+}
+
+.join-header p {
+    color: var(--logo-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Formulario y Secciones (Cards) */
+.work-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-section {
+    border: 1px solid var(--sombreado);
+    border-radius: 8px;
+    padding: 25px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 10px rgba(192, 179, 179, 0.2);
+}
+
+.form-section legend {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--azul-electrico);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Grilla de Inputs */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    margin-top: 20px;
+}
+
+/* Etiquetas e Inputs */
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-de-texto);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid var(--logo-color);
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Enfoque en los inputs (Focus) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--azul-electrico);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.2);
+}
+
+/* Zona de Carga de Archivos (CV) */
+.file-drop-zone {
+    border: 2px dashed var(--azul-electrico);
+    border-radius: 6px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 255, 0.02);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-drop-zone:hover {
+    background-color: rgba(0, 0, 255, 0.05);
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--azul-electrico);
+    font-weight: 600;
+}
+
+.file-label i {
+    font-size: 2.5rem;
+}
+
+.file-label input[type="file"] {
+    display: none; /* Escondemos el input feo nativo */
+}
+
+.file-preview {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--logo-color);
+    font-weight: 500;
+}
+
+/* Botón Submit */
+.form-submit-container {
+    text-align: right;
+}
+
+.btn-submit-work {
+    background-color: var(--azul-electrico);
+    color: var(--blanco);
+    border: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit-work:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.btn-submit-work:active {
+    transform: translateY(0);
+}
+
+/* Contenedor del Logo Centrado */
+.brand-logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Separación con el título de abajo */
+    width: 100%;
+}
+
+/* Imagen del Logo */
+.brand-logo-header .form-logo {
+    max-width: 180px; /* Tamaño ideal para que destaque sin ser gigante */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px var(--sombreado)); /* Sombreado sutil usando tu variable */
+}
+
+/* Ajuste responsivo para pantallas chicas si hace falta */
+@media (max-width: 480px) {
+    .brand-logo-header .form-logo {
+        max-width: 140px;
+    }
+}
+
+/* Responsive total para celulares */
+@media (max-width: 600px) {
+    .work-with-us-container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+    .form-section {
+        padding: 15px;
+    }
+    .btn-submit-work {
+        width: 100%;
+        text-align: center;
+    }
+}

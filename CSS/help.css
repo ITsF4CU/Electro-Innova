@@ -1,0 +1,112 @@
+.help-main {
+    width: 100%;
+    min-height: 80vh;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.faq-section {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+    padding: 40px;
+}
+
+.faq-title-container {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.help-icon {
+    font-size: 2.5rem;
+    color: #0056ff;
+    margin-bottom: 10px;
+}
+
+.faq-title-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.faq-title-container p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+/* Estructura del acordeón */
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #334155;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f8fafc;
+}
+
+.arrow-icon {
+    font-size: 1.1rem;
+    color: #64748b;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    padding: 0 20px;
+}
+
+.accordion-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    padding-bottom: 20px;
+}
+
+.accordion-item.active {
+    border-color: #0056ff;
+}
+
+.accordion-item.active .arrow-icon {
+    transform: rotate(180deg);
+    color: #0056ff;
+}
+
+.accordion-item.active .accordion-header {
+    color: #0056ff;
+}

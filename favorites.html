@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- ESTILO GENERAL -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- ESTILO REUTILIZADO PARA LOS TITULOS XDDD-->
+    <link rel="stylesheet" href="CSS/products_page.css">
+    <!-- ESTILO ESPECIFICO PARA LA PAGINA DE FAVORITOS-->
+    <link rel="stylesheet" href="CSS/fav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <header>
+        <div class="blue-nav">
+            <div class="dis">
+                <i class="ph ph-truck"></i>
+                <p>Envios gratis en compras mayores a $99.999</p>
+            </div>
+
+            <div class="blue-nav-options">
+                <ul>
+                    <li>
+                        <i class="ph ph-map-pin"></i>
+                        <a href="">Sucursales</a>
+                    </li>
+
+                    <li>
+                        <i class="ph ph-user-circle"></i>
+                        <a href="login.html" id="user-btn" class="name-of-user">Mi cuenta</a>
+                    </li>
+
+                    <li>
+                        <i class="ph ph-info"></i>
+                        <a href="help.html">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="first-header-line">
+            <div class="logo">
+                <a href="index.html" class="main-link">
+                    <img src="Images/Identity/ChatGPT Image 1 jun 2026, 01_32_26 p.m..png" alt="electro-innova-logo">
+                    <h2>Electro <span class="innova-style">Innova</span></h2>
+                </a>
+            </div>
+
+            <form class="buscador">
+                <div class="seeker-container">
+                    <div class="seeker-input">
+                        <input type="text" placeholder="¿Que estas buscando?..." class="seeker" id="seeker-input">
+                        <button id="seeker-button" class="search"><i class="ph ph-magnifying-glass"></i></button>
+                    </div>
+
+                    <div class="suggestions-list" id="suggestions-list">
+                        <ul id="product-list-in-search">
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <div class="first-line-options">
+                <div class="options">
+                    <a href="favorites.html">
+                        <i class="ph ph-heart"></i>
+                        <span class="inner-a">Favoritos</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            
+                <div class="options">
+                    <a href="cart.html">
+                        <i class="ph ph-shopping-cart-simple"></i>
+                        <span class="inner-a">Carrito</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="second-line-options">
+            <ul>
+                <!-- Links directos espejo (Solo lo que está cargado en el array) -->
+                <li><a href="products.html?category=heladeras">Heladeras</a></li>
+                <li><a href="products.html?category=lavarropas">Lavarropas</a></li>
+                <li><a href="products.html?category=cocinas">Cocinas</a></li>
+                <li><a href="products.html?category=microondas">Microondas</a></li>
+                <li><a href="products.html?category=aires">Aires</a></li>
+                <li><a href="products.html?category=informatica">Informaticos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-filter">
+            <div class="section_title">
+                <h2 id="section-title">Tus favoritos</h2>
+            
+                <div class="section-buttons">
+                    <div class="filter-wrapper">
+                        <div class="filter" id="filter-button">
+                            <button><i class="ph ph-funnel-simple"></i>Filtrar</button>
+                        </div>
+
+                        <div class="dropdown-menu hidden" id="filter-dropdown">
+                            <div class="dropdown-group">
+                                <h4>Categorías</h4>
+                                <button class="btn-select" data-tipo="categoria" data-value="heladeras">Heladeras</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="lavarropas">Lavarropas</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="cocinas">Cocinas</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="microondas">Microondas</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="aires">Aires</button>
+                                <button class="btn-select" data-tipo="categoria" data-value="informatica">Informatica</button>
+                            </div>
+                            <div class="dropdown-group">
+                                <h4>Beneficios</h4>
+                                <button class="btn-select" data-tipo="beneficio" data-value="envio">Envío Gratis</button>
+                                <button class="btn-select" data-tipo="beneficio" data-value="cuotas">Cuotas sin Interés</button>
+                            </div>
+                            <button class="btn-clear" id="clear-filters">Limpiar Filtros</button>
+                        </div>
+                    </div>
+                
+                    <div class="order-wrapper">
+                        <div class="order-by" id="order-button">
+                            <button><i class="ph ph-list-bullets"></i>Ordenar por</button>
+                        </div>
+                    
+                        <div class="dropdown-menu hidden" id="order-dropdown">
+                            <button class="btn-order" data-order="precio-asc">Precio (Menor a Mayor)</button>
+                            <button class="btn-order" data-order="precio-desc">Precio (Mayor a Menor)</button>
+                            <button class="btn-order" data-order="alfa-asc">Nombre (A - Z)</button>
+                            <button class="btn-order" data-order="alfa-desc">Nombre (Z - A)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="favoritos"></div>
+        </section>
+    </main>
+
+    <!-- ARCHIVO JAVASCRIPT ESPECIFICO PARA EL HEADER -->
+    <script type="module" src="JS/interaction/global-header.js"></script>
+    <script type="module" src="JS/product-filter/filter.js"></script>
+    <script type="module" src="JS/favorite-page.js"></script>
+    <script type="module" src="JS/session/session-trigger.js"></script>
+</body>
+</html>

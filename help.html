@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro Innova | Centro de Ayuda</title>
+    <!-- Tus mismos links de fuentes e iconos del header -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/help.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.2"></script>
+</head>
+<body>
+    <header>
+        <div class="blue-nav">
+            <div class="dis">
+                <i class="ph ph-truck"></i>
+                <p>Envios gratis en compras mayores a $99.999</p>
+            </div>
+
+            <div class="blue-nav-options">
+                <ul>
+                    <li>
+                        <i class="ph ph-map-pin"></i>
+                        <a href="">Sucursales</a>
+                    </li>
+
+                    <li>
+                        <i class="ph ph-user-circle"></i>
+                        <a href="login.html" id="user-btn" class="name-of-user">Mi cuenta</a>
+                    </li>
+
+                    <li>
+                        <i class="ph ph-info"></i>
+                        <a href="help.html">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="first-header-line">
+            <div class="logo">
+                <a href="index.html" class="main-link">
+                    <img src="Images/Identity/ChatGPT Image 1 jun 2026, 01_32_26 p.m..png" alt="electro-innova-logo">
+                    <h2>Electro <span class="innova-style">Innova</span></h2>
+                </a>
+            </div>
+
+            <form class="buscador">
+                <div class="seeker-container">
+                    <div class="seeker-input">
+                        <input type="text" placeholder="¿Que estas buscando?..." class="seeker" id="seeker-input">
+                        <button id="seeker-button" class="search"><i class="ph ph-magnifying-glass"></i></button>
+                    </div>
+
+                    <div class="suggestions-list" id="suggestions-list">
+                        <ul id="product-list-in-search">
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <div class="first-line-options">
+                <div class="options">
+                    <a href="favorites.html">
+                        <i class="ph ph-heart"></i>
+                        <span class="inner-a">Favoritos</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            
+                <div class="options">
+                    <a href="cart.html">
+                        <i class="ph ph-shopping-cart-simple"></i>
+                        <span class="inner-a">Carrito</span>
+                        <span class="notification"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="second-line-options">
+            <ul>
+                <!-- Links directos espejo (Solo lo que está cargado en el array) -->
+                <li><a href="products.html?category=heladeras">Heladeras</a></li>
+                <li><a href="products.html?category=lavarropas">Lavarropas</a></li>
+                <li><a href="products.html?category=cocinas">Cocinas</a></li>
+                <li><a href="products.html?category=microondas">Microondas</a></li>
+                <li><a href="products.html?category=aires">Aires</a></li>
+                <li><a href="products.html?category=informaticos">Informaticos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="help-main">
+        <section class="faq-section">
+            <div class="faq-title-container">
+                <i class="ph ph-info help-icon"></i>
+                <h2>Centro de Ayuda y Preguntas Frecuentes</h2>
+                <p>¿Tenés alguna duda sobre tu proceso de compra o envíos? Acá te respondemos las consultas más comunes.</p>
+            </div>
+
+            <!-- Contenedor del Acordeón -->
+            <div class="accordion-container">
+                
+                <!-- Pregunta 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Cuáles son los métodos de pago disponibles?</span>
+                        <i class="ph ph-caret-down arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>En Electro Innova podés abonar tus compras mediante transferencia bancaria, tarjetas de débito y crédito (ofrecemos hasta 3 cuotas sin interés con bancos seleccionados), o efectivo generando un cupón de Pago Fácil o Rapipago.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Cómo realizan los envíos y cuánto tardan?</span>
+                        <i class="ph ph-caret-down arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Realizamos envíos a todo el país. Para la provincia de Tucumán, el plazo de entrega estimado es de 48 a 72 horas hábiles. Recordá que si tu compra supera los $99.999, ¡el envío es totalmente gratis!</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Cómo puedo hacer el seguimiento de mi pedido?</span>
+                        <i class="ph ph-caret-down arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Una vez que el pago sea acreditado, recibirás un correo electrónico con el código de seguimiento de la empresa de logística y un enlace directo para que puedas monitorear el estado de tu paquete en tiempo real.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Qué documentación necesito para retirar en sucursal?</span>
+                        <i class="ph ph-caret-down arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Para retirar tu producto en cualquiera de nuestras sucursales habilitadas, deberás presentar el DNI original del titular de la compra y el comprobante de pago digital (factura o mail de confirmación) que te enviamos.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Cómo hago para hacer el seguimiento de mi pedido?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Una vez que se despacha tu compra, te va a llegar un correo electrónico automático con el enlace de seguimiento y el número de guía asignado por el correo. También podés consultar el estado en tiempo real ingresando a 'Mi Cuenta' dentro de la sección 'Mis Pedidos'.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Emiten factura A o B? ¿Cómo la recibo?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Sí, realizamos tanto Factura A (para responsables inscriptos) como Factura B (para consumidores finales). Al momento de rellenar tus datos de facturación en el carrito, podés ingresar tu CUIT o DNI. La factura en formato PDF se genera automáticamente y se envía a tu mail dentro de las 24 horas posteriores a la compra.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Qué pasa si el producto llega dañado o no es lo que pedí?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>No te preocupes, todos nuestros envíos viajan asegurados. Si notas un problema al recibirlo, rechaza el paquete o comunícate de inmediato con nuestro soporte técnico dentro de las primeras 48 horas. Te gestionamos el cambio directo por una unidad nueva sin que tengas que abonar ningún costo extra.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Cuáles son los canales de atención al cliente disponibles?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Podés contactarnos de lunes a viernes de 08:00 a 20:00 y sábados de 09:00 a 13:00 a través de nuestro WhatsApp directo de soporte, por correo electrónico a soporte@electroinnova.com, o completando el formulario de contacto en nuestro sitio web.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Puedo retirar mi compra de forma presencial en una sucursal?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>¡Sí! Al momento de finalizar la compra podés seleccionar la opción de 'Retiro en Sucursal' sin cargo. Una vez que tu pedido esté preparado (suele tardar menos de 24 horas hábiles), te enviaremos un mail avisándote que ya podés pasar a buscarlo presentándote con tu DNI y el comprobante de compra.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>¿Tienen planes de financiación con tarjeta de crédito?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Ofrecemos planes de financiación adaptados a las promociones vigentes de las plataformas de pago autorizadas. Contamos con planes de 3 y 6 cuotas fijas con Tarjetas de Crédito bancarias, y promociones especiales sin interés con bancos seleccionados durante eventos especiales de la tienda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <h2 class="footer-logo">Electro <span>Innova</span></h2>
+                <p class="footer-description">
+                    Líderes en tecnología, electrodomésticos y soluciones innovadoras para tu hogar. Calidad y confianza en cada compra.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#" aria-label="Linkedin"><i class="ph ph-linkedin-logo"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="cart.html">Mi Carrito</a></li>
+                    <li><a href="account.html">Mi Cuenta</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-section">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="help.html">Preguntas Frecuentes</a></li>
+                    <li><a href="terms-conditions.html">Términos y Condiciones</a></li>
+                    <li><a href="privacy-policy.html">Políticas de Privacidad</a></li>
+                    <li><a href="work-with-us.html">Trabajá con nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-section">
+                <h3>Contacto</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="ph ph-map-pin"></i>
+                        <span>Monteros, Tucumán, Argentina</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-phone"></i>
+                        <span>+54 (3863) 123-456</span>
+                    </li>
+                    <li>
+                        <i class="ph ph-envelope"></i>
+                        <span>soporte@electroinnova.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 Electro Innova. Todos los derechos reservados.</p>
+                <div class="footer-payment-methods">
+                    <i class="ph ph-credit-card" title="Tarjetas de Crédito/Débito"></i>
+                    <i class="ph ph-bank" title="Transferencias Bancarias"></i>
+                    <i class="ph ph-barcode" title="Pago Fácil / Rapipago"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tus scripts globales al final -->
+    <script type="module" src="JS/interaction/global-header.js"></script>
+    <script type="module" src="JS/interaction/faq.js"></script>
+    <script type="module" src="JS/session/session-trigger.js"></script>
+    <script type="module" src="JS/interaction/header-control.js"></script>
+</body>
+</html>
